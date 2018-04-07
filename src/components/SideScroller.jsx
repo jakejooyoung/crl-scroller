@@ -24,10 +24,10 @@ export default class SideScroller extends React.Component {
     const decorated=arr.map(item=>
       <div className="columns" href={item+""}>
         <a href={"#"+item}>
-        <div className="thumbnail"
-          key={item.toString()}
-          onClick={(e)=>this.handleSelection(item,e)}
-          >{item}</div>
+          <div className="thumbnail"
+            key={item.toString()}
+            onClick={(e)=>this.handleSelection(item,e)}
+            >{item}</div>
         </a>
       </div>
     );

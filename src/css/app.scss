@@ -74,27 +74,26 @@ body{
 		background: yellow;
 	}
 	.sideScroller {
-		height:80px;
-		width: 100%;
-		background: green;
+    overflow: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+    width: 100%;
+    display: inline-flex;
 		.scrollable {
-	    max-height: 80px;
-	    overflow-x: scroll;
-	    overflow-y: hidden;
-	    white-space: nowrap;
-	    display: inline-flex;
+			background-color:green;
+	    height: 80px;
 	    .columns{
-				display: inline-block;
-				flex-grow:1;
-				min-width:100px;
-				padding:20px 10px;
-				position: relative;
-				text-align: center;
-				.thumbnail{
-					vertical-align: middle;
-					background-color:green;
-
-				}
+		    flex-grow: 1;
+		    min-width: 100px;
+		    position: relative;
+		    height: 100%;
+		    display: inline-table;
+		    text-align: center;
+		    a{
+		    	height: 100%;
+		    	vertical-align: middle;
+		    	display: table-cell;
+		    }
 			}
 		}
 	}
@@ -106,7 +105,7 @@ body{
     overflow-x: hidden;
     overflow-y: scroll;
     height:400px;
-    scroll-behavior:smooth;
+		scroll-behavior:smooth;
     .item{
 	    -webkit-transform: translateZ( 0 );
 	    transform: translateZ( 0 );
@@ -118,37 +117,13 @@ body{
 	}	
 }
 
-/* COMPONENTS */
-.post {
-	text-align: left;
-    position: relative;
-    margin: 1px;
-    z-index: 0;
-    padding: 18px;
-    background: #fff;
-    // border-radius: 3px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    color:#001d2f;
-    // color: var(--primary-color);
-    &:hover{
-    	background:rgba(230, 230, 230, 0.1);
-    }
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; 
 }
-.article{
-	h5 {
-    position: absolute;
-    margin-top: 220px;
-    text-align: center;
-    width: 100%;
-	}
-  position: relative;
-	width:300px;
-	height:500px;
-	background:lightblue;
-	text-align:center;
-	font-size:30px;
-	margin:30px auto;
+::-webkit-scrollbar-thumb {
 }
+
 .npUl{
 	.blip{
 		display: inline-block;
@@ -172,6 +147,7 @@ body{
 	    }
 	}	
 }
+
 /* Responsive */
 .card{
     border-radius: 5px;
