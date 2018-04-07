@@ -19,6 +19,11 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
+	resolve:{
+    alias: {
+      Seeds: path.resolve(__dirname, "seeds/"),
+    },
+  },
   module: {
     rules: [
       {
