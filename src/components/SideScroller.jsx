@@ -22,19 +22,21 @@ export default class SideScroller extends React.Component {
   render(){
     const arr=this.state.arr;
     const decorated=arr.map(item=>
-      <div className="columns" href={item+""}>
+      <div className="columns" key={item.toString()} href={item+""}>
         <a href={"#"+item}>
           <div className="thumbnail"
-            key={item.toString()}
-            onClick={(e)=>this.handleSelection(item,e)}
-            >{item}</div>
+            onClick={(e)=>this.handleSelection(item,e)}>
+            <div className="alignMid">
+              {item}
+            </div>
+          </div>
         </a>
       </div>
     );
 
     return (
       <div className={"innerContainer "+this.props.className}>
-        <div className="scrollable" mousewheel={(e)=>mousewheel(e)}>
+        <div className="scrollable" mousewheel={(event, delta)=>mousewheel(event, delta)}>
           {decorated}
         </div>
       </div>

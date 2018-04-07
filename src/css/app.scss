@@ -67,8 +67,8 @@ body{
 		display: inline-flex;
 		border-radius: inherit;
 		width:100%;
-		.scrollable{
-			border-radius: inherit;
+		&.detailsViewer{
+			padding-top: 20px;
 		}
 	}
 	.sideScroller {
@@ -79,12 +79,12 @@ body{
     display: inline-flex;
     scroll-behavior:smooth;
 		.scrollable {
-			background-color:green;
-	    height: 80px;
+	    height: 160px;
 	    .columns{
 		    flex-grow: 1;
-		    min-width: 100px;
+		    min-width: 120px;
 		    position: relative;
+
 		    height: 100%;
 		    display: inline-table;
 		    text-align: center;
@@ -92,6 +92,20 @@ body{
 		    	height: 100%;
 		    	vertical-align: middle;
 		    	display: table-cell;
+		    	.thumbnail{
+						min-width: 100px;
+				    height: 70px;
+				    background: white;
+				    border: 1px solid var(--border-color);
+				    border-radius: 2px;
+				    align-items: center;
+				    display: table;
+				    margin: 0 10px;
+				    .alignMid{
+				    	display:table-cell;
+				    	vertical-align:middle;
+				    }
+		    	}
 		    }
 			}
 		}
@@ -103,7 +117,7 @@ body{
     text-align: center;
     overflow-x: hidden;
     overflow-y: scroll;
-    height:400px;
+   	height: 450px;
     border-radius: inherit;
 		scroll-behavior:smooth;
     .item{
@@ -111,18 +125,23 @@ body{
 	    transform: translateZ( 0 );
 	    -webkit-transition: -webkit-transform 0.6s ease-in-out;
 	    transition: transform 0.6s ease-in-out;
-	    width: 95%;
-	    height: 100px;
-	    margin: 5px auto;
+	    width: 94%;
+	    height: 134px;
+	    margin: 8px auto;
     }
 	}	
 }
 
 ::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; 
+	width: 0px;
+  background: #ffe9e9;
+  height: 20px;
+  border:1px solid #afafaf;
 }
 ::-webkit-scrollbar-thumb {
+	border: 1px solid grey;
+	background: #ff9898;
+	height: 5px;
 }
 
 .npUl{
@@ -155,6 +174,8 @@ body{
     background: white;
     padding: 10px;
     border: 1px solid #d4d4d4;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
 }
 
 /* UI GLOBALS */

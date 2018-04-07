@@ -15,8 +15,13 @@ export default class DetailsViewer extends React.Component {
     this.props.onSelect(itemKey);
   }
 
+  scroll(){
+
+  }
+
   render(){
     const listOfItems=this.state.arr;
+    const myJSON = JSON.stringify(listOfItems);
     const DecoratedList = ({items}) => (
       <div>
         {items.map(item => (
@@ -25,7 +30,7 @@ export default class DetailsViewer extends React.Component {
             className="item card" 
             key={item.key}
             onClick={(e)=>this.handleSelection(item.key,e)}>
-              {item.status}
+              <p>{JSON.stringify(item)}</p>
             </div>
         ))}
       </div>
