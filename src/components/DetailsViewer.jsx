@@ -21,9 +21,10 @@ export default class DetailsViewer extends React.Component {
       <div>
         {items.map(item => (
           <div 
+            id={item.key}
             className="item" 
             key={item.key}
-            onClick={(e)=>this.handleSelection(item,e)}>
+            onClick={(e)=>this.handleSelection(item.key,e)}>
               {item.status}
             </div>
         ))}
@@ -31,8 +32,10 @@ export default class DetailsViewer extends React.Component {
     ); 
 
     return (
-      <div className="">
-        <DecoratedList items={listOfItems}/>
+      <div className={"innerContainer "+this.props.className}>
+        <div className="scrollableDown">
+          <DecoratedList items={listOfItems}/>
+        </div>
       </div>
     )
   }

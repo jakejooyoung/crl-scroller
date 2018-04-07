@@ -27,18 +27,20 @@ export default class App extends React.Component {
   }
 
   updateSelection(itemKey, e){
-  	console.log(itemKey);
-  	// this.setState({'selected':itemKey});
+  	console.log(this.state.selected);
+  	this.setState({'selected':itemKey});
   }
 	render() {
 		const thumbnailsView=(
 			<SideScroller 
+				className="sideScroller"
 				data={this.state.items} 
 				onSelect={(itemKey, e)=>this.updateSelection(itemKey, e)}>
 			</SideScroller>
 		)
 		const detailsView=(
 			<DetailsViewer 
+				className="detailsViewer"
 				data={this.state.descriptions} 
 				onSelect={(itemKey, e)=>this.updateSelection(itemKey, e)}>
 			</DetailsViewer>
@@ -46,8 +48,10 @@ export default class App extends React.Component {
 		// var obj = objArray.find(function (obj) { return obj.id === 3; });
 		return (
 			<div> 
-				{thumbnailsView} 
-				{detailsView}
+				<div className="datacoral-interface">
+					{thumbnailsView} 
+					{detailsView}
+				</div>
 			</div>
 		)
 	}
