@@ -34,6 +34,7 @@ export default class App extends React.Component {
 		const thumbnailsView=(
 			<SideScroller 
 				data={this.state.items} 
+				selectedKey={this.state.selected}
 				onSelect={(itemKey, e)=>this.updateSelection(itemKey, e)}>
 			</SideScroller>
 		)
@@ -46,6 +47,9 @@ export default class App extends React.Component {
 		// var obj = objArray.find(function (obj) { return obj.id === 3; });
 		return (
 			<div> 
+				<div className="datacoral-title">
+					Datacoral
+				</div>
 				<div className="datacoral-interface">
 					{thumbnailsView} 
 					{detailsView}

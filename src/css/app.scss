@@ -3,6 +3,7 @@
 	--link-color: #0079ff;
 	--success-color:#25ff3a;
   --border-color:#888383;
+  --coral-pink:#ff7070;
 }
 body{
 	//required for react-motion-drawer
@@ -55,10 +56,17 @@ body{
 	}
 
 }
+.datacoral-title {
+	text-align: center;
+	font-size: 40px;
+	margin-top:80px;
+	color:#fb4648;
+}
 .datacoral-interface{
+	max-width: 610px;
 	width:55%;
 	display:block;
-	margin: 70px auto;
+	margin: 40px auto;
 	border-radius: 5px;
 	border:1px solid var(--border-color);
 	box-shadow: 1px 1px 1px 1px #d2caca;
@@ -112,7 +120,7 @@ body{
 		    }
 		    &.selected{
 		    	.thumbnail{
-		    		background-color:#ff7070;
+		    		background-color:var(--coral-pink);
 		    		color:white;
 		    		width: 75px;
 				    height: 65px;
@@ -156,7 +164,7 @@ body{
 }
 ::-webkit-scrollbar-thumb {
 	border: 1px solid grey;
-	background: #ff7070;
+	background: var(--coral-pink);
 	height: 5px;
 }
 

@@ -18,6 +18,7 @@ https://yarnpkg.com/en/docs/install
 #### 3. Start a Webpack Dev Server ###
 
 ```
+$ yarn install
 $ yarn start
 ```
 
