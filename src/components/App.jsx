@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Items from 'Seeds/items.json';
 import Descriptions from 'Seeds/descriptions.json';
+import SideScroller from './SideScroller.jsx';
+import DetailsViewer from './DetailsViewer.jsx';
 
 export default class App extends React.Component {
 	constructor(props) {
@@ -13,7 +15,7 @@ export default class App extends React.Component {
 		}
 	}
 
-	componentDidMount() {
+	componentWillMount() {
 		const items=Items.payload;
 		const descriptions=Descriptions.payload;
 		// console.log
@@ -22,13 +24,32 @@ export default class App extends React.Component {
 			'descriptions':descriptions,
 			'selected':items[0],
 		})
-		console.log(items);
   }
 
+  updateSelection(itemKey, e){
+  	console.log(itemKey);
+  	// this.setState({'selected':itemKey});
+  }
 	render() {
-
-
-		return (<div> hello world  </div>)
+		const thumbnailsView=(
+			<SideScroller 
+				data={this.state.items} 
+				onSelect={(itemKey, e)=>this.updateSelection(itemKey, e)}>
+			</SideScroller>
+		)
+		const detailsView=(
+			<DetailsViewer 
+				data={this.state.descriptions} 
+				onSelect={(itemKey, e)=>this.updateSelection(itemKey, e)}>
+			</DetailsViewer>
+		)
+		// var obj = objArray.find(function (obj) { return obj.id === 3; });
+		return (
+			<div> 
+				{thumbnailsView} 
+				{detailsView}
+			</div>
+		)
 	}
 }
 
