@@ -22,7 +22,7 @@ export default class DetailsViewer extends React.Component {
         {items.map(item => (
           <div 
             id={item.key}
-            className="item" 
+            className="item card" 
             key={item.key}
             onClick={(e)=>this.handleSelection(item.key,e)}>
               {item.status}
