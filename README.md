@@ -2,6 +2,8 @@
 
 ### What is this repository for? ###
 
+![alt text](crl-scroller-screenshot.png)
+
 This is a horizontal scroller implementation for Datacoral.
 
 #### 1. Clone repo ###
