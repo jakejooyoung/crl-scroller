@@ -12,11 +12,8 @@ export default class DetailsViewer extends React.Component {
   }
 
   handleSelection(itemKey,e){
+    // Update parent state using parent's callback function
     this.props.onSelect(itemKey);
-  }
-
-  scroll(){
-
   }
 
   render(){
@@ -30,14 +27,18 @@ export default class DetailsViewer extends React.Component {
             className="item card" 
             key={item.key}
             onClick={(e)=>this.handleSelection(item.key,e)}>
-              <p>{JSON.stringify(item)}</p>
-            </div>
+
+              <div className="alignMid">
+                {item.key + " " + item.status}
+              </div>
+
+          </div>
         ))}
       </div>
     ); 
 
     return (
-      <div className={"innerContainer "+this.props.className}>
+      <div className="innerContainer detailsViewer">
         <div className="scrollableDown">
           <DecoratedList items={listOfItems}/>
         </div>

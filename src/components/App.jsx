@@ -33,14 +33,12 @@ export default class App extends React.Component {
 	render() {
 		const thumbnailsView=(
 			<SideScroller 
-				className="sideScroller"
 				data={this.state.items} 
 				onSelect={(itemKey, e)=>this.updateSelection(itemKey, e)}>
 			</SideScroller>
 		)
 		const detailsView=(
 			<DetailsViewer 
-				className="detailsViewer"
 				data={this.state.descriptions} 
 				onSelect={(itemKey, e)=>this.updateSelection(itemKey, e)}>
 			</DetailsViewer>

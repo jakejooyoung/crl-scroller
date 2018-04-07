@@ -47,6 +47,15 @@ const config = {
         use: 'json-loader',
       },
       {
+			  test: /\.(jpg|png)$/,
+			  use: {
+			    loader: "url-loader",
+			    options: {
+			      limit: 25000,
+			    },
+			  },
+			},
+      {
         test: /\.(eot|woff|woff2|svg|ttf)([?]?.*)$/, loader: 'file-loader',
       },
     ],

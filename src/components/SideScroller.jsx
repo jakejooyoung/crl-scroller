@@ -5,6 +5,7 @@ export default class SideScroller extends React.Component {
     super(props);
     this.state={
       arr:this.props.data,
+      selected:this.props.selected,
     }
   }
   componentWillMount(){
@@ -12,17 +13,15 @@ export default class SideScroller extends React.Component {
   }
 
   handleSelection(itemKey,e){
+    // Update parent state using parent's callback function
     this.props.onSelect(itemKey);
+    this.setState({'selected':itemKey});
   }
-  mousewheel(e,delta){
-    console.log(delta);
-    this.scrollLeft -= (delta * 30);
-    event.preventDefault();
-  }
+
   render(){
     const arr=this.state.arr;
     const decorated=arr.map(item=>
-      <div className="columns" key={item.toString()} href={item+""}>
+      <div className={"columns "+(this.state.selected===item?"selected":"")} key={item.toString()} href={item+""}>
         <a href={"#"+item}>
           <div className="thumbnail"
             onClick={(e)=>this.handleSelection(item,e)}>
@@ -35,8 +34,8 @@ export default class SideScroller extends React.Component {
     );
 
     return (
-      <div className={"innerContainer "+this.props.className}>
-        <div className="scrollable" mousewheel={(event, delta)=>mousewheel(event, delta)}>
+      <div className="innerContainer sideScroller">
+        <div className="scrollable">
           {decorated}
         </div>
       </div>
