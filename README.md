@@ -9,7 +9,7 @@ This is a horizontal scroller implementation for Datacoral.
 #### 1. Clone repo ###
 
 ```
-$ git clone git@bitbucket.org:npgains/crl-scroller.git
+$ git clone git@github.com:jknpg/crl-scroller.git
 ```
 
 #### 2. Install yarn package manager ###
